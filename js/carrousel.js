@@ -39,8 +39,12 @@
         elmCarrousel__form.appendChild(elmCarrousel__form__radio);
 
         elmCarrousel__form__radio.addEventListener('mousedown', function(){
+            if (dernierIndex != -1) {
+                elmCarrousel__figure.children[dernierIndex].classList.remove('carrousel__figure__img--activer');
+            }
             console.log(this.dataset.index);
             elmCarrousel__figure.children[this.dataset.index].classList.add('carrousel__figure__img--activer');
+            dernierIndex = this.dataset.index;
         })
 
     }
