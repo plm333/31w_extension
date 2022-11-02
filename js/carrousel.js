@@ -38,8 +38,9 @@
         index ++;
         elmCarrousel__form.appendChild(elmCarrousel__form__radio);
 
-        elmCarrousel__form__radio.addEventListener('mousedown', function (){
-            console.log();
+        elmCarrousel__form__radio.addEventListener('mousedown', function(){
+            console.log(this.dataset.index);
+            elmCarrousel__figure.children[this.dataset.index].classList.add('carrousel__figure__img--activer');
         })
 
     }
