@@ -5,6 +5,7 @@
     let elmBouton = document.querySelector('.bouton');
     let elmCarrousel = document.querySelector('.carrousel');
     let elmCarrousel__x = document.querySelector('.carrousel__x');
+    let elmCarrousel__figure = document.querySelector('.carrousel__figure');
 
 
     elmBouton.addEventListener('mousedown', function(){
@@ -14,8 +15,9 @@
             console.log(elmImg.getAttribute('src'));
             let elmCarrouselImg = document.createElement('img');
             //console.log(elmImg.getAttribute('src'));
-            elmCarrousel.setAttribute('src', elmImg.getAttribute('src'));
-            elmCarrousel.classList.add('carrousel__figure__img');
+            elmCarrouselImg.setAttribute('src', elmImg.getAttribute('src'));
+            elmCarrouselImg.classList.add('carrousel__figure__img');
+            elmCarrousel__figure.appendChild(elmCarrouselImg);
         }
 
     })
