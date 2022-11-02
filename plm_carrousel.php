@@ -2,10 +2,10 @@
 /**
  * @package           Carrousel
  * @author            Pierre-Luc Moisan
- * @copyright         Collèege de Maisonneuve
+ * @copyright         Collège de Maisonneuve
  * @license           GPL-2.0-or-later
  * 
- * plugin Name: em_carrousel
+ * plugin Name: plm_carrousel
  * Description: Permet d'afficher une boîte modale de l'image sélectionnée d'une galerie. Pour ensuite accéder à toutes les images de la galerie
  * Author: Eddy Martin
  * Author URI: https://github.com/plm333
@@ -22,35 +22,35 @@ wp_enqueue_scripts // le hook
 
 
  
-function em_enqueue()
+function plm_enqueue()
 {
     $version_css = filemtime(plugin_dir_path(__FILE__) . "style.css");
     $version_js =  filemtime(plugin_dir_path(__FILE__) . "js/carrousel.js");
  
-wp_enqueue_style('em_carrousel_css',
+wp_enqueue_style('plm_carrousel_css',
                 plugin_dir_url(__FILE__) . "style.css",
                 array(),
                 $version_css,
                 false);
  
-wp_enqueue_script('em_carrousel_js',
+wp_enqueue_script('plm_carrousel_js',
                 plugin_dir_url(__FILE__) . "js/carrousel.js",
                 array(),
                 $version_js,
                 true);                
 }
  
-add_action("wp_enqueue_scripts","em_enqueue");
+add_action("wp_enqueue_scripts","plm_enqueue");
 
 
  
-function boite_carrousel(){
+function plm_boite_carrousel(){
     /////////////////////////////////////// HTML
     // Le conteneur d'une boîte
     $contenu = 
     "<button class='bouton'>Ouvrir carrousel</button>"
-     ."<div class='carrousel'>"
-        .'<button class="carrousel__x">X<button>'
+     .'<div class="carrousel">'
+        .'<button class="carrousel__x">X</button>'
         .'<figure class="carrousel__figure"></figure>'
         .'<form class="carrousel__form"></form>'
     . '</div> <!-- fin class="carrousel" -->';
@@ -58,4 +58,4 @@ function boite_carrousel(){
     return $contenu;
    }
  
-   add_shortcode('plm_carrousel', 'boite_carrousel');
+   add_shortcode('plm_carrousel', 'plm_boite_carrousel');

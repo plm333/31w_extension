@@ -13,4 +13,25 @@
 .carrousel--ouvrir {
   transform: scale(1);
   opacity: 1;
+}
+
+.carrousel__x {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.carrousel__figure {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.carrousel__figure__img {
+  object-fit: cover;
 }/*# sourceMappingURL=style.css.map */

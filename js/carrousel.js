@@ -12,6 +12,10 @@
         elmCarrousel.classList.add('carrousel--ouvrir');
         for (const elmImg of elmGalerieImg){
             console.log(elmImg.getAttribute('src'));
+            let elmCarrouselImg = document.createElement('img');
+            //console.log(elmImg.getAttribute('src'));
+            elmCarrousel.setAttribute('src', elmImg.getAttribute('src'));
+            elmCarrousel.classList.add('carrousel__figure__img');
         }
 
     })
