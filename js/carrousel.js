@@ -17,10 +17,27 @@
         for (const elmImg of elmGalerieImg){
             ajout_img_dans_carrousel(elmImg);
             ajout_radio_dans_carrousel();
+            elmImg.addEventListener('mousedown', function(){
+                console.log(this.dataset.index);
+                /*créer une fonction */
+                if (dernierIndex != -1) {
+                    elmCarrousel__figure.children[dernierIndex].classList.remove('carrousel__figure__img--activer');
+                }
+                console.log(this.dataset.index);
+                elmCarrousel__figure.children[this.dataset.index].classList.add('carrousel__figure__img--activer');
+                dernierIndex = this.dataset.index;
+            })
         }
     })
 
+    /**
+     * Ajout d'une img dans le carrousel
+     * @param {object dom} elmImg 
+     */
+
+
     function ajout_img_dans_carrousel(elmImg) {
+        elmImg.dataset.index = index;
         console.log(elmImg.getAttribute('src'));
         let elmCarrouselImg = document.createElement('img');
         //console.log(elmImg.getAttribute('src'));

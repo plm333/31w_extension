@@ -53,6 +53,8 @@ function plm_boite_carrousel(){
         .'<button class="carrousel__x">X</button>'
         .'<figure class="carrousel__figure"></figure>'
         .'<form class="carrousel__form"></form>'
+        .'<a class="Back" onclick="plusSlides(-1)">&#10094;</a>'
+        .'<a class="forward" onclick="plusSlides(1)">&#10095;</a>'
     . '</div> <!-- fin class="carrousel" -->';
     
     return $contenu;
